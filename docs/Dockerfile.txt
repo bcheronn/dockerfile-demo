@@ -1,0 +1,26 @@
+Demo 1 :
+docker build -t demo1 .
+docker run demo1
+
+Demo 2 :
+docker build -t demo2 .
+docker run -dp 80:80 demo2
+
+Demo 3 :
+docker-compose up
+
+Demo 4 :
+docker-compose up
+
+Demo 5 :
+docker build -t demo5 .
+docker run -dp 8000:8000 demo5
+
+curl --request POST \
+  --url http://localhost:8000/test \
+  --header 'content-type: application/json' \
+  --data '{
+	"msg": "Hello world demo5!"
+}'
+
+curl http://localhost:8000/test

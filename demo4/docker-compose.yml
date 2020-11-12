@@ -1,0 +1,12 @@
+version: '3'
+services:
+  php-xdebug:
+    build:
+      context: .
+    ports:
+      - '80:80'
+    volumes:
+        - './index.php:/var/www/html/index.php'
+    environment:
+      XDEBUG_CONFIG: "remote_host=host.docker.internal remote_port=9000 remote_enable=1"
+  
